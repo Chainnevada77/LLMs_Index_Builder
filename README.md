@@ -1,3 +1,5 @@
+## create_index.py
+
 Create vector and metadata indexes (`index.faiss`, `index.pkl`) from your document collection.  
 Built for efficient retrieval and search use cases in LLM pipelines (e.g. RAG, QA systems).
 ---
@@ -11,7 +13,6 @@ Built for efficient retrieval and search use cases in LLM pipelines (e.g. RAG, Q
 ## 🚀 Usage
 
 1. Install dependencies
-```bash
 pip install langchain faiss-cpu sentence-transformers tqdm
 or
 pip install requirements.txt
