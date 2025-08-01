@@ -1,28 +1,44 @@
-# Create Index Data for LLMs
-
-Generate `index.faiss` and `index.pkl` files from your dataset to power vector search or Retrieval-Augmented Generation (RAG) pipelines for Large Language Models (LLMs).
+Create vector and metadata indexes (`index.faiss`, `index.pkl`) from your document collection.  
+Built for efficient retrieval and search use cases in LLM pipelines (e.g. RAG, QA systems).
 ---
-## 🧠 Overview
-
-This repository contains a script (`create_index.py`) that processes input data, embeds it using a chosen model, and generates:
-
-- `llm_index` folder  
-- `index.faiss`: A FAISS vector index for fast similarity search.
-- `index.pkl`: A pickle file storing metadata or document mapping.
-
-These files can be used in downstream tasks such as:
-- Retrieval-based chatbots
-- Searchable knowledge bases
-- RAG (Retrieval-Augmented Generation) pipelines
+## 📦 Outputs
+| File              | Description                              |
+|-------------------|------------------------------------------|
+| `index.faiss`     | Vector store built with FAISS            |
+| `index.pkl`       | Metadata store (e.g., chunk mappings)    |
+| Folder: `llm_index/` | Contains both files above            |
 ---
-## 📂 Output Files
+## 🚀 Usage
 
-| File         | Description                              |
-|--------------|------------------------------------------|
-| `index.faiss` | FAISS index for vector similarity search |
-| `index.pkl`   | Python Pickle storing metadata/doc IDs   |
----
-## ⚙️ How It Works
-
+1. Install dependencies
 ```bash
-python create_index.py --input data/your_data.json
+pip install langchain faiss-cpu sentence-transformers tqdm
+or
+pip install requirements.txt
+
+2. Before running, update this line in the script:
+
+documents_path = "/home/cakra_ai_dev/projects/hospital_rag_chatbot" # <--- YOU MUST CHANGE THIS!
+#in my case path and has been using conda inside WSL
+
+3. Run the script
+python create_index.py
+
+🛠 Script Highlights
+    Loads documents from a directory (.txt by default).
+    Splits text using RecursiveCharacterTextSplitter.
+    Embeds using sentence-transformers/all-MiniLM-L6-v2.
+    Builds FAISS vector index.
+    Saves to llm_index/ folder.
+
+🧱 Folder Structure
+├── create_index.py
+├── requirements.txt
+├── license.txt
+├── llm_index/         # Output files
+│   ├── index.faiss
+│   └── index.pkl
+└── README.md
+
+📜 License
+MIT License
