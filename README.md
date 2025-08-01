@@ -25,12 +25,13 @@ documents_path = "/home/cakra_ai_dev/projects/hospital_rag_chatbot" # <--- YOU M
 3. Run the script
 python create_index.py
 
+'''bash
 🛠 Script Highlights
-    Loads documents from a directory (.txt by default).
-    Splits text using RecursiveCharacterTextSplitter.
-    Embeds using sentence-transformers/all-MiniLM-L6-v2.
-    Builds FAISS vector index.
-    Saves to llm_index/ folder.
+Loads documents from a directory (.txt by default).
+Splits text using RecursiveCharacterTextSplitter.
+Embeds using sentence-transformers/all-MiniLM-L6-v2.
+Builds FAISS vector index.
+Saves to llm_index/ folder.
 
 🧱 Folder Structure
 ├── create_index.py
