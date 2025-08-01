@@ -25,7 +25,7 @@ documents_path = "/home/cakra_ai_dev/projects/hospital_rag_chatbot" # <--- YOU M
 3. Run the script
 python create_index.py
 
-'''bash
+```bash
 🛠 Script Highlights
 Loads documents from a directory (.txt by default).
 Splits text using RecursiveCharacterTextSplitter.
